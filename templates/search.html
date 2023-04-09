@@ -34,6 +34,9 @@
           cursor: pointer;
           font-size: 16px;
         }
+        .card-img-top {
+          max-height: 200px;
+        }
       </style>
       <div id="search-container">
         <h1>Search for a Recipe</h1>
@@ -47,18 +50,16 @@
     {% if results %}
         <h3>Search results for "{{ query }}"</h3>
         {% for result in results %}
-        <div class="card mb-3">
-            <div class="card-body">
-            <h5 class="card-title">{{ result['title'] }}</h5>
-            <p class="card-text"><strong>Title:</strong> {{ result['Title'] }}</p>
-            <p class="card-text"><strong>Ingredients:</strong> {{ result['Ingredients'] }}</p>
-            <p class="card-text"><strong>Instructions:</strong> {{ result['Instructions'] }}</p>
-            </div>
-        </div>
-        {% if not loop.last %}
-            <div class="border-top my-3"></div>
-        {% endif %}
+          <div class="card mb-3">
+              <div class="card-body">
+                  <h5 class="card-title">{{ result['Title'] }}</h5>
+                  <img src="{{ result['ImageURL'] }}" class="card-img-top" alt="Recipe Image">
+                  <p class="card-text"><strong>Ingredients:</strong> {{ result['Ingredients'] }}</p>
+                  <p class="card-text"><strong>Instructions:</strong> {{ result['Instructions'] }}</p>
+              </div>
+          </div>
         {% endfor %}
+
     {% endif %}
     </div>
 </body>
