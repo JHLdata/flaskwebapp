@@ -3,16 +3,16 @@ from azure.search.documents import SearchClient
 from azure.core.credentials import AzureKeyCredential
 from azure.storage.blob import BlobServiceClient, BlobClient
 
-BLOB_URL = "https://foodimagestorage.blob.core.windows.net/foodimages/"
+BLOB_URL = "https://foodimageflask.blob.core.windows.net/foodimage/"
 
-connect_str = 'DefaultEndpointsProtocol=https;AccountName=foodimagestorage;AccountKey=CnZCPsj3CUu8UpqfakzO/INzfYcIvyJb+Ap+E4MzEtlHIHrLx1L+ynCw/Li2YnwwsC/F7sHuxNb7+AStrppYRQ==;EndpointSuffix=core.windows.net'
-blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-container_name = 'foodimages'
-container_client = blob_service_client.get_container_client(container_name)
+#connect_str = 'DefaultEndpointsProtocol=https;AccountName=foodimagestorage;AccountKey=CnZCPsj3CUu8UpqfakzO/INzfYcIvyJb+Ap+E4MzEtlHIHrLx1L+ynCw/Li2YnwwsC/F7sHuxNb7+AStrppYRQ==;EndpointSuffix=core.windows.net'
+#blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+#container_name = 'foodimages'
+#container_client = blob_service_client.get_container_client(container_name)
 
 # Replace with your search service URL and API key
-SEARCH_ENDPOINT = "https://search-web-static-1.search.windows.net/"
-SEARCH_API_KEY = "0lj9J6Y7KQh1VUgPbgmdi93R3vpScRlpUqAHTmwIJ4AzSeCltvAb"
+SEARCH_ENDPOINT = "https://search-web-static.search.windows.net/"
+SEARCH_API_KEY = "NghYfsibR9596kJ1GefeHg3nH5Zen2b0Rx1bAr5no9AzSeBdnWv3"
 
 app = Flask(__name__)
 
